@@ -34,7 +34,7 @@ resource "aws_docdb_cluster_parameter_group" "main" {
 }
 resource "aws_docdb_cluster" "main" {
   cluster_identifier      = "${local.name_prefix}-cluster"
-  engine                  = "docdb4.0"
+  engine                  = "docdb"
   master_username         = data.aws_ssm_parameter.master_username
   master_password         = data.aws_ssm_parameter.master_password
   backup_retention_period = var.backup_retention_period
