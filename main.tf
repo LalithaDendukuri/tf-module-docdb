@@ -5,6 +5,7 @@ resource "aws_docdb_subnet_group" "main" {
 }
 output "dbsubnets" {
   value = var.subnet_ids
+
 }
 resource "aws_security_group" "main" {
   name        = "${local.name_prefix}-sg"
