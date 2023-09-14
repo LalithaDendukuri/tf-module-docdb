@@ -3,7 +3,9 @@ resource "aws_docdb_subnet_group" "main" {
   subnet_ids = var.subnet_ids
   tags        = merge(local.tags, { Name = "${local.name_prefix}-subnet-group" })
 }
-
+output "dbsubnets" {
+  value = var.subnet_ids
+}
 resource "aws_security_group" "main" {
   name        = "${local.name_prefix}-sg"
   description ="${local.name_prefix}-sg"
